@@ -26,27 +26,37 @@ public class BinaryGroup {
     
     public void tab(){
         int over=1;
-        for (int anterior = 1; anterior < numeros.length; anterior++) {
-            for (int i = anterior; i < this.altura; i++) {
-                for (int j = this.ancho; over!=0&& j>0; j--) {
-                    over=this.numeros[i][j-1].mas();
-                }
+        BinaryElement[] numero = new BinaryElement[this.ancho];
+        for (int i = 0; i < this.ancho; i++) {
+            numero[i]= new BinaryElement(0);
+        }
+        for (int linea = 1; linea < this.altura; linea++) {
+            for (int i = this.ancho; over!=0&& i>0; i--) {
+                over=numero[i-1].mas();
+            }
             over=1;
+            for (int i = 0; i<this.ancho ; i++) {
+                
+                this.numeros[linea][i].setState(numero[i].getState());
             }
         }
-        show();
+        this.show();
     }
     public void tabE(){
         int over=1;
-        for (int anterior = 1; anterior < numeros.length; anterior++) {
-            for (int i = anterior; i < this.altura; i++) {
-                for (int j = this.ancho; over!=0&& j>0; j--) {
-                    over=this.numeros[i][j-1].mas();
-                }
+        //BinaryElement[] numero = new BinaryElement[this.ancho];
+        BinaryElement[] numero = new BinaryElement[this.ancho];
+        for (int linea = 1; linea < this.altura; linea++) {
+            for (int i = this.ancho; over!=0&& i>0; i--) {
+                over=numero[i-1].mas();
+            }
             over=1;
+            for (int i = 0; i<this.ancho ; i++) {
+                
+                this.numeros[linea][i].setState(numero[i].getState());
             }
         }
-        showE();
+        this.showE();
     }
     private void show(){
         for (int i = 0; i < this.altura; i++) {

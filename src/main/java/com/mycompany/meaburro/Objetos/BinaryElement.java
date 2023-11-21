@@ -23,8 +23,6 @@ public class BinaryElement {
     public BinaryElement() {
         this.State=false;
     }
-    //Metodos
-    //Añadir 1
     public int mas(){
         if (State) {
             this.State=false;
@@ -34,7 +32,13 @@ public class BinaryElement {
             return 0;
         }
     }
-    //Mostrar
+
+    public boolean getState() {
+        return State;
+    }
+    public void setState(boolean State) {
+        this.State = State;
+    }
     public void mostrarE() {
         if (State) {
             System.out.print(1+"\t");
