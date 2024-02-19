@@ -3,8 +3,7 @@
  */
 package com.mycompany.meaburro;
 
-import com.mycompany.meaburro.Objetos.BinaryGroup;
-import java.util.Scanner;
+import Windows.InterfaceGestor;
 
 /**
  *
@@ -13,13 +12,16 @@ import java.util.Scanner;
 public class MeAburro {
 
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        InterfaceGestor Program = new InterfaceGestor();
+                
+/*        Scanner teclado = new Scanner(System.in);
+        int resp;
         boolean queap = true;
         final int inicial = 4;
         int cont = inicial;
         System.out.println("El progrma se ha iniciado porfabor inserte 0 para parar");
-        while (queap) {
-            int resp = teclado.nextInt();
+            while (queap) {
+            resp = teclado.nextInt();
             if (resp != 0) {
                 BinaryGroup display = new BinaryGroup(resp);
                 display.tab();
@@ -31,7 +33,6 @@ public class MeAburro {
                 cont=inicial;
                 System.out.println("El progrma se ha iniciado porfabor inserte 0 para parar");
             }
-        }
-
+        }*/
     }
 }

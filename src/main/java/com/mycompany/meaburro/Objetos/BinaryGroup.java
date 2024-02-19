@@ -14,17 +14,10 @@ public class BinaryGroup {
 
     private int ancho;
     private int altura;
-    private int[][] numeros;
 
     public BinaryGroup(int tamano) {
         this.ancho = tamano;
         this.altura = (int) Math.pow(2, tamano);
-        this.numeros = new int[altura][ancho];
-        for (int i = 0; i < this.altura; i++) {
-            for (int j = 0; j < this.ancho; j++) {
-                this.numeros[i][j] = 0;
-            }
-        }
     }
 
     public void tab() {
@@ -33,25 +26,19 @@ public class BinaryGroup {
         for (int i = 0; i < this.ancho; i++) {
             numero[i] = new BinaryElement(0);
         }
+        for (int i = 0; i < this.ancho; i++) {
+                System.out.print(numero[i].getState());
+        }
+        System.out.println(" ");
         for (int linea = 1; linea < this.altura; linea++) {
             for (int i = this.ancho; over != 0 && i > 0; i--) {
                 over = numero[i - 1].mas();
             }
             over = 1;
             for (int i = 0; i < this.ancho; i++) {
-                this.numeros[linea][i] = numero[i].getState();
-            }
-        }
-        this.show();
-    }
-
-    private void show() {
-        for (int i = 0; i < this.altura; i++) {
-            for (int j = 0; j < this.ancho; j++) {
-                System.out.print(this.numeros[i][j]);
+                System.out.print(numero[i].getState());
             }
             System.out.println(" ");
         }
-
     }
 }

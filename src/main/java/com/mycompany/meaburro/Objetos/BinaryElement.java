@@ -9,9 +9,10 @@ package com.mycompany.meaburro.Objetos;
  * @author dimit
  */
 public class BinaryElement {
-
+    private BinaryElement anterior;
+    //private int Posicion; Este puede que lo aproveche para realizar la salida del sistema segun los valores de la tabla.
     private boolean State;//Si el estado es 0 es flaso si es 1 es true
-
+    
     public BinaryElement(int a) {
         if (a == 0) {
             this.State = false;
@@ -28,12 +29,11 @@ public class BinaryElement {
     }
 
     public int mas() {
+        this.State = !this.State;
         if (State) {
-            this.State = false;
-            return 1;
-        } else {
-            this.State = true;
             return 0;
+        } else {
+            return 1;
         }
     }
 
@@ -44,24 +44,7 @@ public class BinaryElement {
             return 0;
         }
     }
-
     public void setState(boolean State) {
         this.State = State;
-    }
-
-    public void mostrarE() {
-        if (State) {
-            System.out.print(1 + "\t");
-        } else {
-            System.out.print(0 + "\t");
-        }
-    }
-
-    public void mostrar() {
-        if (State) {
-            System.out.print(1);
-        } else {
-            System.out.print(0);
-        }
     }
 }
